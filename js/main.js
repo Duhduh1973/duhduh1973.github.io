@@ -195,6 +195,7 @@ $(document).ready(function(){
 });
 
 // Image sequence timer as a function
+var switchImage;
 function playImageSequence(){
     var i = 1;
     switchImage = setInterval(function() {
@@ -206,7 +207,7 @@ function playImageSequence(){
         //$('.console h5').text('Image' +(i)+ 'loaded...');
     }, 30);
 
-    event.preventDefault();
+    //event.preventDefault();
 }
 
 
