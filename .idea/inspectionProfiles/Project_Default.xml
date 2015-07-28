@@ -20,6 +20,9 @@
       </option>
       <option name="myCustomValuesEnabled" value="true" />
     </inspection_tool>
+    <inspection_tool class="IgnoreUnusedEntry" enabled="true" level="UNUSED ENTRY" enabled_by_default="true">
+      <scope name="Justin's Scope" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
     <inspection_tool class="JSAccessibilityCheck" enabled="true" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="JSCheckFunctionSignatures" enabled="true" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="JSClosureCompilerSyntax" enabled="true" level="WARNING" enabled_by_default="false" />

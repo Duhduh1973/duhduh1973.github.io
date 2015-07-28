@@ -12,6 +12,46 @@
   <i class="fa fa-step-backward fa-stack-1x fa-inverse"></i>
 </span>
 
+<style>
+
+    #btnLight .fa-lightbulb-o {
+        font-size: 1.6em;
+    }
+    .progressBar {
+        position: relative;
+        width: 100%;
+        height: 6px;
+        background-color: #000;
+        margin-top: 11px;
+    }
+    .timeBar, .timeBarSong {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: #660406;
+        z-index: 10;
+        /*opacity: 1;*/
+    }
+    #fullScreen .glyphicon-fullscreen {
+        margin-left: .03em;
+        margin-top: .05em;
+    }
+    .bufferBar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: #161616;
+        z-index: 5;
+        /*opacity: 0.5;*/
+    }
+
+
+</style>
+
 <script>
     /*********************************************************/
     //         Landing Page video controls/functions         //

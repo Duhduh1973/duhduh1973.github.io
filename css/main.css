@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Titillium+Web:900);
+
 @font-face {
     font-family: 'federationclassic';
     src: url('fonts/fec_____-webfont.eot');
@@ -53,6 +53,7 @@
     .navbar-brand {
         padding: 0 !important;
         margin-left: 60px;
+        margin-top: -5px;
     }
     h1 {
         display: flex;
@@ -63,8 +64,7 @@
         position: absolute;
         top: -25px;
         left: 0;
-        z-index: 1001;
-        cursor: pointer;
+    ;
     }
     h1 a, h1 a:link {
         flex: 0 1 auto;
@@ -73,16 +73,16 @@
         text-decoration: none;
         background: linear-gradient(90deg, rgba(0,0,0,0.7), rgba(43, 43, 43, 0.7), rgba(0,0,0,0.7));
         border: 1px solid #0e0e0e;
-        -webkit-box-shadow: 4px 4px 12px #000000;
         -moz-box-shadow: 4px 4px 12px #000000;
         box-shadow: 4px 4px 12px #000000;
         padding: 2px 200px;
+        cursor: pointer
     }
     h1 a:hover, h1 a:active {
         text-decoration: none;
-        color: #9d9d9d;
-        text-shadow: 0 0 50px rgba(255,255,255,0.7);
-        box-shadow: inset 0 0 50px rgba(146, 146, 146, 0.1), 4px 4px 12px rgba(0,0,0,1);
+        color: #e7e7e7;
+        text-shadow: 0 0 20px rgba(255,255,255,0.9);
+        box-shadow: inset 0 0 50px rgba(146, 146, 146, 0.3), 4px 4px 12px rgba(0,0,0,1);
     }
 
     h4 {
@@ -125,7 +125,6 @@
         box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.9);
         height: 380px;
         border: 2px #111111 solid;
-        -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         border-radius: 4px;
         padding-right: 0px !important;
@@ -146,7 +145,6 @@
 
     ul.playList li {
         background: rgba(30, 30, 30, 0.9);
-        -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         border-radius: 4px;
         text-shadow: 1px 1px 3px #000;
@@ -460,10 +458,8 @@
     .fa-square .fa-stack-2x {
         background: linear-gradient(to bottom, #333333, #555555, #222222);
         border: 1px solid #000;
-        -webkit-border-radius: 6px;
         -moz-border-radius: 6px;
         border-radius: 6px;
-        -webkit-box-shadow: 1px 1px 1px #000;
         -moz-box-shadow: 1px 1px 1px #000;
         box-shadow: 1px 1px 1px #000;
     }
@@ -471,7 +467,6 @@
     .fa-stack:active {
         background: linear-gradient(to bottom, #333333, #555555, #222222);
         border: 1px solid #000;
-        -webkit-border-radius: 6px;
         -moz-border-radius: 6px;
         border-radius: 6px;
         box-shadow: inset 1px 1px 1px #000;
@@ -533,112 +528,6 @@
     }
 }
 
-input[type=range] {
-    -webkit-appearance: none;
-    width: 100%;
-    margin: 13.8px 0;
-}
-input[type=range]:focus {
-    outline: none;
-}
-input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 6px;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px #000000;
-    background: #660406;
-    border-radius: 1.3px;
-    border: 0.2px solid #010101;
-}
-
-.statusBar:hover input[type=range] {
-    box-shadow: 0 0 10px rgba(255,255,255,0.2);
-}
-.statusBar:hover input[type=range]::-webkit-slider-thumb {
-    box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
-    border-radius: 3px;
-}
-input[type=range]::-webkit-slider-thumb:hover {
-    background: #101010;
-    border-radius: 3px;
-    border: 1px solid #070707;
-    height: 24px;
-    width: 7px;
-    margin-top: -8px;
-}
-input[type=range]::-webkit-slider-thumb {
-    border-radius: 3px;
-    border: 1px solid #070707;
-    box-shadow: 0 0 4px rgba(255,255,255,0.2);
-    height: 24px;
-    width: 7px;
-    margin-top: -8px;
-    background: #101010;
-    cursor: pointer;
-    -webkit-appearance: none;
-}
-input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #660406;
-}
-/*input[type=range]::-moz-range-track {
-    width: 100%;
-    height: 8.4px;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: #3071a9;
-    border-radius: 1.3px;
-    border: 0.2px solid #010101;
-}
-input[type=range]::-moz-range-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 1px solid #000000;
-    height: 36px;
-    width: 16px;
-    border-radius: 3px;
-    background: #ffffff;
-    cursor: pointer;
-}
-input[type=range]::-ms-track {
-    width: 100%;
-    height: 8.4px;
-    cursor: pointer;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-}
-input[type=range]::-ms-fill-lower {
-    background: #2a6495;
-    border: 0.2px solid #010101;
-    border-radius: 2.6px;
-    box-shadow: 1px 1px  1px #000000, 0px 0px 1px #0d0d0d;
-}
-input[type=range]::-ms-fill-upper {
-    background: #3071a9;
-    border: 0.2px solid #010101;
-    border-radius: 2.6px;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-input[type=range]::-ms-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 1px solid #000000;
-    height: 36px;
-    width: 16px;
-    border-radius: 3px;
-    background: #ffffff;
-    cursor: pointer;
-    height: 8.4px;
-}
-input[type=range]:focus::-ms-fill-lower {
-    background: #3071a9;
-}
-input[type=range]:focus::-ms-fill-upper {
-    background: #367ebd;
-}*/
-
-
-
-
-
 
 /*** TEST CLASSES ***/
 .borderTest {
@@ -649,59 +538,6 @@ input[type=range]:focus::-ms-fill-upper {
 .ytPlaceholder {
     padding-top: 10%;
 }
-#btnLight .fa-lightbulb-o {
-    font-size: 1.6em;
-}
-.progressBar {
-    position: relative;
-    width: 100%;
-    height: 6px;
-    background-color: #000;
-    margin-top: 11px;
-}
-.timeBar, .timeBarSong {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: #660406;
-    z-index: 10;
-    /*opacity: 1;*/
-}
-#fullScreen .glyphicon-fullscreen {
-    margin-left: .03em;
-    margin-top: .05em;
-}
-.bufferBar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: #161616;
-    z-index: 5;
-    /*opacity: 0.5;*/
-}
-
-
-/***************************  **************************/
-/***************************  **************************/
-/*********  CRAZY BUTTON GRADIENT BACKGROUND ***********/
-/***************************  **************************/
-#wtfOver {
-    color: #d7d7d7;
-    border: solid 1px #333;
-    background: #0079FF;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0096FF), to(#005DFF));
-    /*background: -webkit-linear-gradient(0% 0%, 0% 100%, from(#0096FF), to(#005DFF));*/
-    /*background: -moz-linear-gradient(center top, #0096FF, #005DFF);*/
-
-    padding: .5em 2em .55em;
-    border-radius: .5em;
-    box-shadow: 0 1px 2px rgba(0,0,0,.2);
-}
-
 .overlay {
     position: absolute;
     width: 100%;
@@ -717,6 +553,11 @@ input[type=range]:focus::-ms-fill-upper {
     color: #CFCFCF;
     margin-left: -15px !important;
 }
+
+.fbFeedbackPost .composer {
+    color: #CFCFCF !important;
+}
+/*Facebook Comments - Custom Scrollbar for Animation Stage  */
 .slimScrollDiv {
     margin-right: 0 !important;
 }
@@ -727,11 +568,60 @@ input[type=range]:focus::-ms-fill-upper {
 .slimScrollBar, .slimScrollRail {
     width: 12px !important;
 }
-.fbFeedbackPost .composer {
-    color: #CFCFCF !important;
+
+/*Id for animating Pause button*/
+#pauseImageSequence {
+    display: none;
+}
+/*Image Sequence*/
+.imageSequence {
+    flex: 0 1 auto;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    margin-top: -50px;
+    display: none;
+}
+/*Font Awesome PreLoader Icon - Animated*/
+#fa-pulse {
+    flex: 0 1 auto;
+    width: 100%;
+    min-height: 100%;
+    margin-left: -50px;
+    /*margin-top: 50px;*/
+    color: #ffffff;
+    text-shadow: 0 0 30px rgba(255,255,255,0.5);
+}
+/*Font Awesome PreLoader Page Overlay*/
+.preLoaderBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+    min-height: 100%;
+    min-width: 100%;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/*?????????????????*/
+.playBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 
+/*************************************************************************/
+/*************************************************************************/
+/*         Music Page Buttons Animation Stage Content State              */
+/*************************************************************************/
+/*************************************************************************/
+/*Button Container*/
 .buttonRow {
     height: 45px;
     /*background-color: #fff;*/
@@ -739,6 +629,7 @@ input[type=range]:focus::-ms-fill-upper {
     margin: -5px 5px 0 -10px;
     border-radius: 4px;
 }
+/*Facebook Comments*/
 .buttonRow .fa-comments {
     color: #CFCFCF;
     font-size: 1.5em;
@@ -746,6 +637,7 @@ input[type=range]:focus::-ms-fill-upper {
     margin-top: 4px;
     text-shadow: 0 0 3px #000;
 }
+/*Cover Art*/
 .buttonRow .fa-picture-o {
     color: #CFCFCF;
     font-size: 1.3em;
@@ -753,6 +645,7 @@ input[type=range]:focus::-ms-fill-upper {
     margin-top: 4px;
     text-shadow: 0 0 3px #000;
 }
+/*Lyrics*/
 .buttonRow .fa-file-text-o {
     color: #CFCFCF;
     font-size: 1.3em;
@@ -760,6 +653,7 @@ input[type=range]:focus::-ms-fill-upper {
     margin-top: 4px;
     text-shadow: 0 0 3px #000;
 }
+/*Visualizer*/
 .buttonRow .fa-file-video-o {
     color: #CFCFCF;
     font-size: 1.3em;
@@ -771,6 +665,7 @@ input[type=range]:focus::-ms-fill-upper {
     color: #ffffff;
     text-shadow: 0 0 8px #fff;
 }
+/*Button Hover States*/
 .buttonRow .fa-picture-o:hover {
     color: #ffffff;
     text-shadow: 0 0 8px #fff;
@@ -783,6 +678,7 @@ input[type=range]:focus::-ms-fill-upper {
     color: #ffffff;
     text-shadow: 0 0 8px #fff;
 }
+/*Font Awesome Stacked Icon Custom Styles*/
 #commentIcon .fa-stack-2x {
     font-size: 2.4em;
     color: #472f50;
@@ -799,6 +695,7 @@ input[type=range]:focus::-ms-fill-upper {
     font-size: 2.4em;
     color: #7e7b0d;
 }
+/*Font Awesome Stacked Icon Alignment*/
 #visualIcon {
     cursor: pointer;
     margin-right: 15px;
@@ -815,6 +712,22 @@ input[type=range]:focus::-ms-fill-upper {
     cursor: pointer;
     margin-right: 15px;
 }
+.console {
+    background: transparent;
+    color: #CFCFCF;
+    width: 200px;
+    height: 40px !important;
+    float: left;
+    margin-left: 150px;
+    text-align: center;
+    padding-top: 5px;
+}
+.loadImageTest {
+    width: 50px;
+    height: 50px;
+}
+
+/*Stacked Icon Hover States*/
 #commentIcon:hover {
     color: #ffffff;
 }
@@ -823,47 +736,9 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 
-.consoleTest h5 {
-    color: #000;
-    background-color: #fff;
-}
-
-.playHidden {
-    /*display: none;*/
-}
-.imageSequence {
-    flex: 0 1 auto;
-    max-height: 100%;
-    max-width: 100%;
-    margin-top: -50px;
-}
-
-#fa-pulse {
-    flex: 0 1 auto;
-    width: 100%;
-    min-height: 100%;
-    margin-left: -50px;
-    /*margin-top: 50px;*/
-    color: #ffffff;
-    text-shadow: 0 0 30px rgba(255,255,255,0.5);
-}
-.playBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#imageLoadingOffScreen {
+    z-index: -9999;
     position: absolute;
-    top: 0;
-    left: 0;
-}
-.preLoaderBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.9);
-    min-height: 100%;
-    min-width: 100%;
-    z-index: 1000;
-    position: absolute;
-    top: 0;
-    left: 0;
+    left: -99999px;
+    top: -99999px;
 }

@@ -176,37 +176,39 @@ $('.playList #fb-muddy').on("click", function() {
     );
 });
 
-$('h1 a').on('click', function () {
+$(document).ready(function(){
+    $('#preLoaderBox').addClass('preLoaderBox');
+    $('.loadImageTest').hide();
+    $('#imageSequence').show('fade', 1000);
 
-    /*var imageSrc = '../images/ImageSequence/'+ (++i) +'.jpg';
-    var i = 0;
+    var i = 1;
+    loadImage = setInterval(function() {
+        if(i == 548) {
+            $('.console h5').text('Images done loading...');
+            clearInterval(loadImage);
+            $('#preLoaderBox').hide('fade', 1000, 'easeOutQuad');
+            playImageSequence();
+        }
+        $('.loadImageTest').attr('src', 'images/ImageSequence/'+ (++i) +'.jpg');
+        $('.console h5').text('Image' +(i)+ 'loaded...');
+    }, 1);
+});
+
+// Image sequence timer as a function
+function playImageSequence(){
+    var i = 1;
     switchImage = setInterval(function() {
-        if(i == 300) {
-            i = 0;
-            clearInterval(switchImage);
+        if(i == 548) {
+            i = 1;
+            //clearInterval(switchImage);
         }
         $('#imageSequence').attr('src', 'images/ImageSequence/'+ (++i) +'.jpg');
-    }, 41);*/
-
-
-    var dir = "images/ImageSequence";
-    var fileextension = ".jpg";
-    $.ajax({
-        //This will retrieve the contents of the folder if the folder is configured as 'browsable'
-        url: dir,
-        success: function (data) {
-            //Lsit all png file names in the page
-            $(data).find("a:contains(" + fileextension + ")").each(function () {
-                var filename = this.href.replace(window.location.host, "").replace("http:///", "");
-                $("body").append($("<img src=" + dir + filename + "></img>"));
-            });
-        }
-    });
-
-
+        //$('.console h5').text('Image' +(i)+ 'loaded...');
+    }, 30);
 
     event.preventDefault();
-});
+}
+
 
 /*$(document).ready(function(){
     $('#preLoaderBox').addClass('preLoaderBox');
@@ -214,4 +216,8 @@ $('h1 a').on('click', function () {
 });*/
 
 
+
+/*$('#imageLoadingOffScreen').imagesLoaded().done( function( instance ) {
+        console.log('all images successfully loaded');
+    });*/
 

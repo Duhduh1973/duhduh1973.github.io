@@ -1,0 +1,80 @@
+# Created by .ignore support plugin (hsz.mobi)
+### JetBrains template
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
+
+*.iml
+
+## Directory-based project format:
+.idea/
+# if you remove the above rule, at least ignore the following:
+
+# User-specific stuff:
+# .idea/workspace.xml
+# .idea/tasks.xml
+# .idea/dictionaries
+
+# Sensitive or high-churn files:
+# .idea/dataSources.ids
+# .idea/dataSources.xml
+# .idea/sqlDataSources.xml
+# .idea/dynamic.xml
+# .idea/uiDesigner.xml
+
+# Gradle:
+# .idea/gradle.xml
+# .idea/libraries
+
+# Mongo Explorer plugin:
+# .idea/mongoSettings.xml
+
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+
+
+# Unused video functions
+extraVideoFunctions.html
+# Facebook Comments PLugin
+fb-comments.html
+# Test file
+imagesequence.html
+# Lyrics for remote loading
+lyrics.html
+# Meta data for songs for remote loading for Facebook Share
+songData.html
+# Gradient stuff
+css/gradient-text.css
+AudioVideo/WayOutRing_Poster.mp4
+AudioVideo/WayOutRing.mp4
+AudioVideo/theater.mp4
+AudioVideo/InvisibleLoop.mp4
+images/amps.jpg
+images/abstractBg2.jpg
+images/seal.jpg
+images/abstractBg3.jpg
+images/video_placeholder.png
+images/blood-bg.jpg
+images/bg.gif
+images/AudioControls.jpg
+images/albumAbstract.jpg
+images/seal.png
+images/xrayBg.jpg
+images/ImageSequence
+css/fonts
+.gitignore

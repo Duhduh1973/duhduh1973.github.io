@@ -31,10 +31,12 @@
 
        <nav class="navbar navbar-inverse navbar-fixed-top page-scroll">
            <div class="navbar-brand">
-               <h4 class="page-scroll">
-                   <a id="" href="#page-top">INVISIBLE GLUE</a>
+               <h4>
+                   <a class="page-scroll" href="#page-top">INVISIBLE GLUE</a>
                </h4>
            </div>
+		   <img class="loadImageTest" src="images/ImageSequence/1.jpg" alt="">
+		   <div class="console"><h5>POOP</h5></div>
        	<ul class="nav navbar-nav navbar-right">
        		<li>
 				<a class="page-scroll" href="#music">MUSIC</a>
@@ -46,10 +48,13 @@
        </nav>
 		<section id="home" class="home">
 			<div id="landingPageContainer" class="landingPageContainer">
-				<img src="images/ImageSequence/94.jpg" id="imageSequence" class="imageSequence" alt="">
-				<h1 class="" amplitude-song-index="10"><a href="/">PLAY</a></h1>
+				<img id="imageSequence" src="images/ImageSequence/1.jpg" class="imageSequence" alt="">
+				<!--<h1 id="poopFart" ><a id="playImageSequence" href="/">PLAY</a></h1>-->
+				<!--<h1 id="pauseImageSequence" class="amplitude-play-pause" amplitude-song-index="10"><a href="/">PAUSE</a></h1>-->
 			</div>
-
+			<div id="preLoaderBox" class="">
+				<i id="fa-pulse" class="fa fa-spinner fa-pulse fa-5x"></i>
+			</div>
             <!--<div class="videoCenter">
                 <video id="wayOutSplash" poster="images/landingPoster.jpg" class="embed-responsive-item" preload>
                     <source src="images/WayOutRin	g_Poster.mp4" type="video/mp4"/>
@@ -77,9 +82,6 @@
                 <a class="page-scroll" href="#music"><i id="landingDownArrow" class="fa fa-angle-double-down fa-3x hvr-icon-hang"></i>
                 </a>
             </div>-->
-			<!--<div id="preLoaderBox" class="">
-				<i id="fa-pulse" class="fa fa-spinner fa-pulse fa-5x"></i>
-			</div>-->
 		</section>
 	   	<section id="music" class="music">
 			<div class="container">
@@ -398,6 +400,7 @@
 		<script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.js"></script>
 		<!-- Custom Scripts -->
 	    <script src="js/amplitude.js"></script>
 	    <script src="js/michaelbromley.js"></script>
