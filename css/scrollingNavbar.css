@@ -6,9 +6,9 @@ of those sections to manage the look and feel of the site. */
 
 .home {
     height: 100%;
-    /*padding-top: 70px;*/
+    /*margin-top: -50px;*/
     text-align: center;
-    /*background: transparent url('../images/ImageSequence/200.jpg') 0 0 no-repeat;*/
+    background: transparent url('../images/ImageSequence/1.jpg') center -70px no-repeat;
 
     /*background:
     radial-gradient(black 15%, transparent 16%) 0 0,

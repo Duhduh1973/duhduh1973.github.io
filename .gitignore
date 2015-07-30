@@ -60,14 +60,9 @@ lyrics.html
 songData.html
 # Gradient stuff
 css/gradient-text.css
-AudioVideo/WayOutRing_Poster.mp4
-AudioVideo/WayOutRing.mp4
-AudioVideo/theater.mp4
-AudioVideo/InvisibleLoop.mp4
 images/amps.jpg
 images/abstractBg2.jpg
 images/seal.jpg
-images/abstractBg3.jpg
 images/video_placeholder.png
 images/blood-bg.jpg
 images/bg.gif
@@ -75,3 +70,5 @@ images/AudioControls.jpg
 images/albumAbstract.jpg
 images/seal.png
 images/xrayBg.jpg
+AudioVideo
+images/abstractBg3.png

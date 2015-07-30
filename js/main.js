@@ -176,49 +176,66 @@ $('.playList #fb-muddy').on("click", function() {
     );
 });
 
-$(document).ready(function(){
-    $('#preLoaderBox').addClass('preLoaderBox');
-    $('.loadImageTest').hide();
-    $('#imageSequence').show('fade', 1000);
 
-    var i = 1;
-    loadImage = setInterval(function() {
-        if(i == 548) {
+        var i = 1;
+    var switchImage;
+    var seqCount;
+    var seqTotal;
+
+    $('#landingPageContainer').hide();
+
+    loadImage = setInterval(function () {
+        if (i <= 548) {
+
+            var imgTag = $('<img>', {
+                id: 'stacked' +(i),
+                src: 'images/ImageSequence/' + (i) + '.jpg',
+                alt: 'Image Sequence',
+                class: 'stackedShow'
+            });
+            imgTag.appendTo('#landingPageContainer');
+
+            $('.console h5').text('Image' + (i) + 'loaded...');
+            i++;
+        } else {
             $('.console h5').text('Images done loading...');
             clearInterval(loadImage);
-            $('#preLoaderBox').hide('fade', 1000, 'easeOutQuad');
-            playImageSequence();
+
+            $('#preLoaderBox').hide('fade', 1000, function() {
+                $('#landingPageContainer').show();
+                $('.stackedShow').hide();
+                playImageSequence();
+            });
         }
-        $('.loadImageTest').attr('src', 'images/ImageSequence/'+ (++i) +'.jpg');
-        $('.console h5').text('Image' +(i)+ 'loaded...');
-    }, 1);
-});
+    },1);
+
 
 // Image sequence timer as a function
-var switchImage;
 function playImageSequence(){
-    var i = 1;
+
+    var seqCount = 1;
+    var seqTotal = 548;
     switchImage = setInterval(function() {
-        if(i == 548) {
-            i = 1;
+        if (seqCount <= seqTotal) {
+            $('#stacked' + (seqCount)).hide();
+            $('#stacked' + (++seqCount)).show();
+            $('.console h5').text('Showing Image Number: ' +(seqCount));
+            //seqCount++;
+        } else {
+            //$('#stacked10').hide();
+            seqCount = 1;
             //clearInterval(switchImage);
         }
-        $('#imageSequence').attr('src', 'images/ImageSequence/'+ (++i) +'.jpg');
-        //$('.console h5').text('Image' +(i)+ 'loaded...');
     }, 30);
-
-    //event.preventDefault();
 }
 
 
-/*$(document).ready(function(){
+$(document).ready(function(){
     $('#preLoaderBox').addClass('preLoaderBox');
-    $('#home').css('background', 'transparent url(images/ImageSequence/200.jpg) center center no-repeat fixed');
-});*/
+    //$('#home').css('background', 'transparent url(images/ImageSequence/200.jpg) center center no-repeat fixed');
+});
 
 
 
-/*$('#imageLoadingOffScreen').imagesLoaded().done( function( instance ) {
-        console.log('all images successfully loaded');
-    });*/
+
 
