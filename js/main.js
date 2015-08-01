@@ -176,53 +176,84 @@ $('.playList #fb-muddy').on("click", function() {
     );
 });
 
+// Changes logo image every x milliseconds
+var logo = 1;
+var logoSrc = 'images/igLogo';
+setInterval(function() {
+  if (logo <= 3) {
+      $('.navbar-brand img').attr('src', 'images/igLogo' +(logo)+ '.png');
+      logo++;
+  } else {
+      logo = 1;
+  }
+}, 5000);
 
-        var i = 1;
-    var switchImage;
-    var seqCount;
-    var seqTotal;
+// Initiate jQueryUI progress bar with change-event callback
+function loadedAmount (val) {
+    $( ".progressBar" ).progressbar({
+        change: function( event, ui ) {},
+        complete: function( event, ui ) {},
+        'value': val
+    });
+}
+loadedAmount(0);
 
-    $('#landingPageContainer').hide();
+// Listen to jQueryUI progress bar change-event callback
+// Update progress as number as percentage - display as text
+var progressVal;
+$( ".progressBar" ).on( "progressbarchange", function( event, ui ) {
+    progressVal = $( ".progressBar" ).progressbar('value');
+    $('#preLoaderBox h5').html(progressVal.toFixed(0)+ '&#37;');
+});
 
-    loadImage = setInterval(function () {
-        if (i <= 548) {
+$('.progressBar').on( "progressbarcomplete", function( event, ui ) {
+    $('.progressBar').progress('destroy');
+} );
 
-            var imgTag = $('<img>', {
-                id: 'stacked' +(i),
-                src: 'images/ImageSequence/' + (i) + '.jpg',
-                alt: 'Image Sequence',
-                class: 'stackedShow'
-            });
-            imgTag.appendTo('#landingPageContainer');
+// Load images into hidden div to be cached before sequencer runs
+var i;
+var switchImage;
+$('#landingPageContainer').hide();
 
-            $('.console h5').text('Image' + (i) + 'loaded...');
-            i++;
-        } else {
-            $('.console h5').text('Images done loading...');
-            clearInterval(loadImage);
+loadImage = setInterval(function () {
+    if (i <= 548) {
+        var imgTag = $('<img>', {
+            id: 'stacked' +(i),
+            src: 'images/ImageSequence/' + (i) + '.jpg',
+            alt: 'Image Sequence',
+            class: 'stackedShow'
+        });
+        imgTag.appendTo('#landingPageContainer');
 
-            $('#preLoaderBox').hide('fade', 1000, function() {
-                $('#landingPageContainer').show();
-                $('.stackedShow').hide();
-                playImageSequence();
-            });
-        }
-    },1);
+        $('.console h5').text('Caching Image: #' + (i));
+        i++;
+        // jQueryUI progress bar value updater
+        loadedAmount((i / 548)*100);
+    } else {
+        $('.console h5').text('Images done loading...');
+        clearInterval(loadImage);
+
+        $('#preLoaderBox').hide('fade', 1000, function() {
+            $('#landingPageContainer').show();
+            $('.stackedShow').hide();
+            playImageSequence();
+        });
+    }
+},1);
 
 
 // Image sequence timer as a function
 function playImageSequence(){
 
     var seqCount = 1;
-    var seqTotal = 548;
+    var seqTotal = 549;
     switchImage = setInterval(function() {
-        if (seqCount <= seqTotal) {
+        if (seqCount < seqTotal) {
             $('#stacked' + (seqCount)).hide();
             $('#stacked' + (++seqCount)).show();
-            $('.console h5').text('Showing Image Number: ' +(seqCount));
+            $('.console h5').text('Image Sequence: ' + '#' +(seqCount));
             //seqCount++;
         } else {
-            //$('#stacked10').hide();
             seqCount = 1;
             //clearInterval(switchImage);
         }
@@ -230,10 +261,10 @@ function playImageSequence(){
 }
 
 
-$(document).ready(function(){
-    $('#preLoaderBox').addClass('preLoaderBox');
-    //$('#home').css('background', 'transparent url(images/ImageSequence/200.jpg) center center no-repeat fixed');
-});
+
+
+
+
 
 
 

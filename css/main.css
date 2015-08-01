@@ -53,7 +53,7 @@
     .navbar-brand {
         padding: 0 !important;
         margin-left: 60px;
-        margin-top: -5px;
+        margin-top: 6px;
     }
     h1 {
         display: flex;
@@ -85,32 +85,6 @@
         box-shadow: inset 0 0 50px rgba(146, 146, 146, 0.3), 4px 4px 12px rgba(0,0,0,1);
     }
 
-    h4 {
-        /*position: relative;*/
-        font-size: 2em;
-        font-family: "sneakers-script-narrow",sans-serif;
-        font-style: normal;
-        font-weight: 900;
-        text-shadow: 0 0 10px rgba(96, 128, 255, 0.1);
-    }
-
-    h4 a, h4 a:hover {
-        text-decoration: none;
-        color: #505050;
-        /*left: -1px;*/
-        /*background: linear-gradient(180deg, #8f8c9c, #181818, #7c7976, #232323, #743934);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;*/
-    }
-    /*h4:after {
-        content: 'INVISIBLE GLUE';
-        color: #7e7e7e;
-        text-shadow: -1px -1px 3px rgba(0,0,0,1), 1px 1px 1px rgba(255,255,255,1);
-        /!*font-size: 2em;
-        font-family: "hwt-american-shopworn",sans-serif;
-        font-style: normal;
-        font-weight: 900;*!/
-    }*/
     .musicBox {
         padding-top: 50px;
     }
@@ -592,9 +566,18 @@
     color: #ffffff;
     text-shadow: 0 0 30px rgba(255,255,255,0.5);
 }
-/*Font Awesome PreLoader Page Overlay*/
+.loading {
+    flex: 0 1 auto;
+    margin-left: -50px;
+    color: #a2a2a2;
+    font-weight: bolder;
+    font-size: x-large;
+    text-shadow: 1px 1px 2px #000;
+}
+/*Font Awesome OR jQueryUI PreLoader Page Overlay*/
 .preLoaderBox {
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.9);
@@ -605,6 +588,8 @@
     top: 0;
     left: 0;
 }
+
+
 /*?????????????????*/
 .playBox {
     display: flex;
@@ -713,14 +698,28 @@
     margin-right: 15px;
 }
 .console {
-    background: transparent;
+    background: rgba(255,0,0,0.1);
     color: #CFCFCF;
     width: 200px;
     height: 40px !important;
-    float: left;
-    margin-left: 150px;
-    text-align: center;
-    padding-top: 5px;
+    /*float: left;*/
+    /*margin-left: 100px;*/
+    /*text-align: center;*/
+    /*margin-top: 10px;*/
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    border: 1px dotted #9f0813;
+    z-index: 1001;
+}
+.console h5 {
+    font-size: 1em;
+    margin-top: -8px;
+    color: #0a9f0d;
+}
+.console h4 {
+    color: #0a9f0d;
+    margin-top: 0px;
 }
 .loadImageTest {
     width: 50px;
@@ -758,4 +757,16 @@
     height: 100%;
     overflow: hidden;
     margin-top: -70px;
+}
+.progressBar {
+    flex: 0 1 auto;
+    width: 25%;
+    min-height: 100%;
+    margin-left: -50px;
+}
+.ui-progressbar {
+    height: 10px;
+}
+.ui-progressbar-overlay {
+     background: red !important;
 }

@@ -11,6 +11,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Poller+One|Fjalla+One'
 			  rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/dot-luv/jquery-ui.css">
         <link rel="stylesheet" href="css/main.css"/>
         <link rel="stylesheet" href="css/scrollingNavbar.css"/>
 		<link rel="stylesheet" href="css/hovers.css"/>
@@ -31,11 +32,10 @@
 
        <nav class="navbar navbar-inverse navbar-fixed-top page-scroll">
            <div class="navbar-brand">
-               <h4>
-                   <a class="page-scroll" href="#page-top">INVISIBLE GLUE</a>
-               </h4>
+			   <a class="page-scroll" href="#page-top">
+				   <img src="images/igLogo1.png" alt="INVISIBLE GLUE HOME">
+			   </a>
            </div>
-		   <div class="console"><h5></h5></div>
        	<ul class="nav navbar-nav navbar-right">
        		<li>
 				<a class="page-scroll" href="#music">MUSIC</a>
@@ -54,8 +54,14 @@
 				<!--<h1 id="poopFart" ><a id="playImageSequence" href="/">PLAY</a></h1>-->
 				<!--<h1 id="pauseImageSequence" class="amplitude-play-pause" amplitude-song-index="10"><a href="/">PAUSE</a></h1>-->
 			</div>
-			<div id="preLoaderBox" class="">
-				<i id="fa-pulse" class="fa fa-spinner fa-pulse fa-5x"></i>
+			<div id="preLoaderBox" class="preLoaderBox">
+				<h5 class="loading"></h5>
+				<div class="progressBar"></div>
+				<!--<i id="fa-pulse" class="fa fa-spinner fa-pulse fa-5x"></i>-->
+			</div>
+			<div class="console">
+				<h4>TEST:</h4>
+				<h5></h5>
 			</div>
             <!--<div class="videoCenter">
                 <video id="wayOutSplash" poster="images/landingPoster.jpg" class="embed-responsive-item" preload>
