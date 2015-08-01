@@ -217,7 +217,7 @@ $('#landingPageContainer').hide();
 
 loadImage = setInterval(function () {
 
-    if (i <= 548) {
+    if (i <= 200) {
         var imgTag = $('<img>', {
             id: 'stacked' +(i),
             src: 'images/ImageSequence/' + (i) + '.jpg',
@@ -261,9 +261,9 @@ $('img').bind('load', function() {
 function playImageSequence(){
 
     var seqCount = 1;
-    var seqTotal = 549;
+    var seqTotal = 200;
     switchImage = setInterval(function() {
-        if (seqCount < seqTotal) {
+        if (seqCount <= seqTotal) {
             $('#stacked' + (seqCount)).hide();
             $('#stacked' + (++seqCount)).show();
             $('.console h5').text('Image Sequence: ' + '#' +(seqCount));
