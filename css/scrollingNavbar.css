@@ -19,10 +19,10 @@ of those sections to manage the look and feel of the site. */
     background-size:16px 16px;*/
 }
 .landingPageContainer {
-    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100%;
 }
 
 .music {

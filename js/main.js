@@ -177,14 +177,14 @@ $('.playList #fb-muddy').on("click", function() {
 });
 
 // Changes logo image every x milliseconds
-var logo = 1;
+var logo = 4;
 var logoSrc = 'images/igLogo';
 setInterval(function() {
-  if (logo <= 3) {
+  if (logo <= 5) {
       $('.navbar-brand img').attr('src', 'images/igLogo' +(logo)+ '.png');
       logo++;
   } else {
-      logo = 1;
+      logo = 4;
   }
 }, 5000);
 
@@ -207,7 +207,7 @@ $( ".progressBar" ).on( "progressbarchange", function( event, ui ) {
 });
 
 $('.progressBar').on( "progressbarcomplete", function( event, ui ) {
-    $('.progressBar').progress('destroy');
+    $('.progressBar').progressbar('destroy');
 } );
 
 // Load images into hidden div to be cached before sequencer runs
@@ -237,6 +237,7 @@ loadImage = setInterval(function () {
             $('#landingPageContainer').show();
             $('.stackedShow').hide();
             playImageSequence();
+            newAlbumHeadline();
         });
     }
 },1);
@@ -259,7 +260,12 @@ function playImageSequence(){
         }
     }, 30);
 }
-
+$('#curtains').hide();
+function newAlbumHeadline() {
+    setTimeout(function() {
+        $('#curtains').show('fade', 1000);
+    }, 5000)
+}
 
 
 
