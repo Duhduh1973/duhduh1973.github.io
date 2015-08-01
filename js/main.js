@@ -217,7 +217,7 @@ $('#landingPageContainer').hide();
 
 loadImage = setInterval(function () {
 
-    if (i <= 200) {
+    if (i <= 548) {
         var imgTag = $('<img>', {
             id: 'stacked' +(i),
             src: 'images/ImageSequence/' + (i) + '.jpg',
@@ -246,7 +246,7 @@ loadImage = setInterval(function () {
             $('#landingPageContainer').show();
             $('.stackedShow').hide();
             playImageSequence();
-            newAlbumHeadline();
+            //newAlbumHeadline();
         });
     }
 },1);
@@ -261,7 +261,7 @@ $('img').bind('load', function() {
 function playImageSequence(){
 
     var seqCount = 1;
-    var seqTotal = 200;
+    var seqTotal = 548;
     switchImage = setInterval(function() {
         if (seqCount <= seqTotal) {
             $('#stacked' + (seqCount)).hide();
@@ -275,12 +275,13 @@ function playImageSequence(){
     }, 30);
 }
 
-$('#curtains').hide();
+/*$('#curtains').hide();
+
 function newAlbumHeadline() {
     setTimeout(function() {
         $('#curtains').show('fade', 1000);
     }, 5000)
-}
+}*/
 
 
 
