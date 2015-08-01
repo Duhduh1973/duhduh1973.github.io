@@ -770,3 +770,10 @@
 .ui-progressbar-overlay {
      background: red !important;
 }
+.curtains {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1002;
+    background: transparent url('../images/curtains.jpg') center center no-repeat;
+}
