@@ -177,14 +177,14 @@ $('.playList #fb-muddy').on("click", function() {
 });
 
 // Changes logo image every x milliseconds
-var logo = 4;
+var logo = 1;
 var logoSrc = 'images/igLogo';
 setInterval(function() {
-  if (logo <= 5) {
+  if (logo <= 3) {
       $('.navbar-brand img').attr('src', 'images/igLogo' +(logo)+ '.png');
       logo++;
   } else {
-      logo = 4;
+      logo = 1;
   }
 }, 5000);
 
@@ -211,21 +211,30 @@ $('.progressBar').on( "progressbarcomplete", function( event, ui ) {
 } );
 
 // Load images into hidden div to be cached before sequencer runs
-var i;
+var i = 1;
 var switchImage;
 $('#landingPageContainer').hide();
 
 loadImage = setInterval(function () {
+
     if (i <= 548) {
         var imgTag = $('<img>', {
             id: 'stacked' +(i),
             src: 'images/ImageSequence/' + (i) + '.jpg',
             alt: 'Image Sequence',
             class: 'stackedShow'
-        });
+            });
         imgTag.appendTo('#landingPageContainer');
 
+
+       /* $('img').load(function() {
+            console.log('stacked' + i);
+        });*/
+
         $('.console h5').text('Caching Image: #' + (i));
+
+
+
         i++;
         // jQueryUI progress bar value updater
         loadedAmount((i / 548)*100);
@@ -241,6 +250,11 @@ loadImage = setInterval(function () {
         });
     }
 },1);
+$('img').bind('load', function() {
+    console.log('Image #'+ i +' loaded');
+}).error(function() {
+    console.log('Image #' + i + 'did not load');
+});
 
 
 // Image sequence timer as a function
@@ -260,6 +274,7 @@ function playImageSequence(){
         }
     }, 30);
 }
+
 $('#curtains').hide();
 function newAlbumHeadline() {
     setTimeout(function() {
