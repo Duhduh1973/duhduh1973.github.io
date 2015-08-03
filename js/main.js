@@ -133,7 +133,14 @@ $('#commentIcon').on('click', function () {
 $('#visualIcon').on('click', function () {
     //$('#fb-comments').animate({'opacity': '0'}, 750);
     $('#songArt').hide('fade', 750);
-    //$('#amplitude-visualization').show('fade',2000);
+    $('#amplitude-visualization').show('fade',2000);
+});
+$('#lyricIcon').on('click', function () {
+    //$('#fb-comments').animate({'opacity': '0'}, 750);
+    $('#songArt').hide('fade', 750);
+    $('#amplitude-visualization').hide('fade',2000);
+    $('.imageSequenceStage').show('fade', 2000);
+    playImageStageSequence();
 });
 $('#imageIcon').on('click', function () {
     $('#amplitude-visualization').hide('fade', 750);
@@ -141,6 +148,7 @@ $('#imageIcon').on('click', function () {
     $('#songArt').show('fade', 2000);
 
 });
+
 
 
 // Custom scrollbar for Animation Stage - mainly for when Facebook Comments are visible
@@ -176,17 +184,18 @@ $('.playList #fb-muddy').on("click", function() {
     );
 });
 
-// Changes logo image every x milliseconds
-var logo = 1;
-var logoSrc = 'images/igLogo';
-setInterval(function() {
-  if (logo <= 3) {
-      $('.navbar-brand img').attr('src', 'images/igLogo' +(logo)+ '.png');
-      logo++;
-  } else {
-      logo = 1;
-  }
-}, 5000);
+// Random logo image on page load/refresh
+//$(window).on('load',function() {
+    var logoSrc = 'images/igLogo';
+    var logoImg = 3;
+    var logoMath = logoSrc + [Math.floor(Math.random() * logoImg + 1)];
+    $('.navbar-brand img').attr('src',  logoMath + '.png');
+    console.log('Logo #'+ logoMath +'.png has been loaded');
+//});
+
+
+
+
 
 // Initiate jQueryUI progress bar with change-event callback
 function loadedAmount (val) {
@@ -246,7 +255,7 @@ loadImage = setInterval(function () {
             $('#landingPageContainer').show();
             $('.stackedShow').hide();
             playImageSequence();
-            //newAlbumHeadline();
+            sealImage();
         });
     }
 },1);
@@ -270,6 +279,32 @@ function playImageSequence(){
             //seqCount++;
         } else {
             seqCount = 1;
+            //clearInterval(switchImage);
+        }
+    }, 30);
+}
+
+function sealImage(){
+    $('#seal').toggleClass('sealSmall sealBig', 3000).toggleClass('hvr-pulse-shrink', 200).delay(1000).fadeOut(500,
+        function() {
+            console.log('Did it work\?');
+            $('#trek').delay(3).toggleClass('trekLogoSmall trekLogoBig', 3000).toggleClass('hvr-pulse-shrink', 200).delay(300);
+        })
+}
+
+// Image sequence timer as a function
+function playImageStageSequence(){
+
+    var seqStageCount = 1;
+    var seqStageTotal = 916;
+    switchImage = setInterval(function() {
+        if (seqStageCount <= seqStageTotal) {
+            $('#stacked' + (seqStageCount)).hide();
+            $('#stacked' + (++seqStageCount)).show();
+            $('.console h5').text('Image Sequence: ' + '#' +(seqStageCount));
+            //seqCount++;
+        } else {
+            seqStageCount = 1;
             //clearInterval(switchImage);
         }
     }, 30);

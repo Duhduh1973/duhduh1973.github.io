@@ -42,8 +42,8 @@
     }
 
     .navbar {
-        background: transparent url("../images/table-bg.png");
-        border: none;
+        background: rgba(34, 34, 34, 0.6);
+        border-bottom: 1px solid #1a1a1a;
     }
 
     .navbar-right {
@@ -51,10 +51,14 @@
         font-weight: 600;
     }
     .navbar-brand {
-        padding: 0 !important;
-        margin-left: 60px;
-        margin-top: 6px;
+        padding-left: 60px;
+        margin-top: -3px;
     }
+    .navbar-brand img {
+        width: 373px;
+        height: 30px;
+    }
+
     h1 {
         display: flex;
         justify-content: center;
@@ -402,6 +406,14 @@
         position: absolute;
         left: 0;
         top: 0;
+    }
+    .imageSequenceStage {
+        width: 100%;
+        border-radius: 4px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 14;
     }
     .albumArt {
         width: 100%;
@@ -805,7 +817,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 }
 .curtains {
     display: flex;
-    flex-flow: column nowrap;
+    /*flex-flow: column nowrap;*/
     justify-content: center;
     align-items: center;
     min-height: 100%;
@@ -815,7 +827,36 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     top: -40px;
     left: 0;
 }
-.curtains h2 {
+.curtains img {
+    cursor: pointer;
+}
+
+.sealSmall {
+    flex: 0 1 auto;
+    width: 1px;
+    height: 1px;
+}
+.sealBig {
+    flex: 0 1 auto;
+    width: 45%;
+    padding-top: 70px;
+}
+.trekLogoSmall {
+    flex: 0 1 auto;
+    width: 1px;
+    height: 1px;
+}
+.trekLogoBig {
+    flex: 0 1 auto;
+    width: 950px;
+    height: 175px;
+    z-index: 1005;
+    position: relative;
+    top: 0;
+    left: 0;
+    /*height: 300px;*/
+}
+/*.curtains h2 {
     flex: 0 1 auto;
     margin-left: -50px;
     color: #371b1d;
@@ -834,7 +875,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     font-family: "quatro-slab",serif;
     text-shadow: 2px 2px 12px #000, -2px -2px 10px #000;
     padding: 10px 0;
-}
+}*/
 .landingDownArrow {
     flex: 0 1 auto;
     width: 100%;
@@ -848,5 +889,5 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     font-size: 7em;
     color: #ffffff;
     text-shadow: 1px 1px 2px #000000, -1px -1px 2px #000;
-     
+
 }
