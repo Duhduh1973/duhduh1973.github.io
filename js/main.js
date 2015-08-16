@@ -9,6 +9,7 @@
 });*/
 
 
+
 /*********************************************************/
 //              Footer show/hide functions               //
 /*********************************************************/
@@ -74,6 +75,11 @@ $(function () {
         }, 1500, 'easeInOutExpo');
     });
 
+});
+$('#enterBtn').bind('click', function () {
+    $('html, body').stop().animate({
+        scrollTop: $('#music').offset().top
+    }, 1500, 'easeInOutExpo');
 });
 
 // Prevent click on download link from triggering play/pause
@@ -184,115 +190,13 @@ $('.playList #fb-muddy').on("click", function() {
     );
 });
 
-// Random logo image on page load/refresh
-//$(window).on('load',function() {
-    var logoSrc = 'images/igLogo';
-    var logoImg = 3;
-    var logoMath = logoSrc + [Math.floor(Math.random() * logoImg + 1)];
-    $('.navbar-brand img').attr('src',  logoMath + '.png');
-    console.log('Logo #'+ logoMath +'.png has been loaded');
-//});
-
-
-
-
-
-// Initiate jQueryUI progress bar with change-event callback
-function loadedAmount (val) {
-    $( ".progressBar" ).progressbar({
-        change: function( event, ui ) {},
-        complete: function( event, ui ) {},
-        'value': val
-    });
-}
-loadedAmount(0);
-
-// Listen to jQueryUI progress bar change-event callback
-// Update progress as number as percentage - display as text
-var progressVal;
-$( ".progressBar" ).on( "progressbarchange", function( event, ui ) {
-    progressVal = $( ".progressBar" ).progressbar('value');
-    $('#preLoaderBox h5').html(progressVal.toFixed(0)+ '&#37;');
-});
-
-$('.progressBar').on( "progressbarcomplete", function( event, ui ) {
-    $('.progressBar').progressbar('destroy');
-} );
-
-// Load images into hidden div to be cached before sequencer runs
-var i = 1;
-var switchImage;
-$('#landingPageContainer').hide();
-
-loadImage = setInterval(function () {
-
-    if (i <= 548) {
-        var imgTag = $('<img>', {
-            id: 'stacked' +(i),
-            src: 'images/ImageSequence/' + (i) + '.jpg',
-            alt: 'Image Sequence',
-            class: 'stackedShow'
-            });
-        imgTag.appendTo('#landingPageContainer');
-
-
-       /* $('img').load(function() {
-            console.log('stacked' + i);
-        });*/
-
-        $('.console h5').text('Caching Image: #' + (i));
-
-
-
-        i++;
-        // jQueryUI progress bar value updater
-        loadedAmount((i / 548)*100);
-    } else {
-        $('.console h5').text('Images done loading...');
-        clearInterval(loadImage);
-
-        $('#preLoaderBox').hide('fade', 1000, function() {
-            $('#landingPageContainer').show();
-            $('.stackedShow').hide();
-            playImageSequence();
-            sealImage();
-        });
-    }
-},1);
 $('img').bind('load', function() {
     console.log('Image #'+ i +' loaded');
 }).error(function() {
     console.log('Image #' + i + 'did not load');
 });
 
-
-// Image sequence timer as a function
-function playImageSequence(){
-
-    var seqCount = 1;
-    var seqTotal = 548;
-    switchImage = setInterval(function() {
-        if (seqCount <= seqTotal) {
-            $('#stacked' + (seqCount)).hide();
-            $('#stacked' + (++seqCount)).show();
-            $('.console h5').text('Image Sequence: ' + '#' +(seqCount));
-            //seqCount++;
-        } else {
-            seqCount = 1;
-            //clearInterval(switchImage);
-        }
-    }, 30);
-}
-
-function sealImage(){
-    $('#seal').toggleClass('sealSmall sealBig', 3000).toggleClass('hvr-pulse-shrink', 200).delay(1000).fadeOut(500,
-        function() {
-            console.log('Did it work\?');
-            $('#trek').delay(3).toggleClass('trekLogoSmall trekLogoBig', 3000).toggleClass('hvr-pulse-shrink', 200).delay(300);
-        })
-}
-
-// Image sequence timer as a function
+/*// Image sequence timer as a function
 function playImageStageSequence(){
 
     var seqStageCount = 1;
@@ -308,15 +212,8 @@ function playImageStageSequence(){
             //clearInterval(switchImage);
         }
     }, 30);
-}
-
-/*$('#curtains').hide();
-
-function newAlbumHeadline() {
-    setTimeout(function() {
-        $('#curtains').show('fade', 1000);
-    }, 5000)
 }*/
+
 
 
 

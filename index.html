@@ -18,6 +18,13 @@
         <!-- TypeKit -->
         <script src="//use.typekit.net/vtv2oct.js"></script>
         <script>try{Typekit.load();}catch(e){}</script>
+		<!--<script>
+			var image = new Image();
+			image.addEventListener('load', imageLoaded, false);
+			console.log( 'image has loaded');
+			img.src = url;
+			
+		</script>-->
 	</head>
 	<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 	<!--<div id="fb-root"></div>
@@ -30,49 +37,60 @@
 	}(document, 'script', 'facebook-jssdk'));</script>-->
 
 
-       <nav class="navbar navbar-inverse navbar-fixed-top page-scroll">
-           <div class="navbar-brand">
-			   <a class="page-scroll" href="#page-top">
-				   <img src="images/igLogo3.png" alt="INVISIBLE GLUE HOME">
-			   </a>
-           </div>
-       	<ul class="nav navbar-nav navbar-right">
-       		<li>
-				<a class="page-scroll" href="#music">MUSIC</a>
-       		</li>
-       		<li>
-				<a class="page-scroll" href="#band">BAND</a>
-       		</li>
-       	</ul>
-       </nav>
-
-
-
-	
-	
-		<section id="home" class="home">
-			<div id="landingPageContainer" class="landingPageContainer">
-				<img class="stackedShow" src="" alt="Image Sequence">
+		<nav class="navHide navbar navbar-inverse navbar-fixed-top page-scroll">
+			<div class="navbar-brand">
+				<a class="page-scroll" href="#page-top">
+				<img src="" alt="INVISIBLE GLUE HOME">
+				</a>
 			</div>
-			<div id="preLoaderBox" class="preLoaderBox">
-				<h5 class="loading"></h5>
-				<div class="progressBar"></div>
+			<div class="navRight">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a class="page-scroll" href="#music">MUSIC</a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#band">BAND</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+
+
+
+		<div id="landing" class="landing">
+			<div class="curtains">
+				<img id="sealBg" class="sealBgSm" src="images/trekSealBg.png" alt="Seal">
+				<img id="sealBg2" class="sealBgBg2" src="images/trekSealBg2.png" alt="Seal">
+				<img id="trekBg" class="trekLogoBgSm" src="images/trekLogoBg.png" alt="Seal">
+				<img id="trekFg" class="trekLogoTitleSm" src="images/trekLogoTitle.png" alt="Trek">
+				<img id="trekFg2" class="trekLogoSub" src="images/trekLogoSub.png" alt="Trek">
+				<img id="trekFg3" class="trekLogoSub" src="images/trekLogoSub2.png" alt="Trek">
+				<h6 class="text-center">
+					<span class="textBlur">listen</span>
+					<span class="textBlur">download</span>
+					<span class="textBlur">share</span>
+					<span id="enterBtn" class="textBlur">begin</span>
+				</h6>
+				<div class="finishContainer">
+					<span class="finishBtn">skip intro</span>
+				</div>
+			</div>
+		</div>
+		<div id="preLoaderBox" class="preLoaderBox">
+			<div class="progressBar"></div>
+			<div class="loading"><h2 class="text-center"></h2></div>
+		</div>
+		<section id="home" class="homeHide home">
+			<div id="imagePlaceholder" class="imagePlaceholder"></div>
+			<div id="landingPageContainer" class="landingPageContainer">
+
 			</div>
 			<div class="console">
 				<h4>TEST:</h4>
 				<h5></h5>
 			</div>
-			<div  class="curtains">
-				<img id="seal" class="sealSmall" src="images/sealLarge.png" alt="Seal">
-				<img id="trek" class="trekLogoSmall" src="images/trekLogo.png" alt="Trek">
-				<!--<h2>DISSATISFACTION GUARANTEED</h2>
-				<span>The New Album</span>
-				<div class="landingDownArrow">
-					<a class="page-scroll" href="#music">
-						<i class="fa fa-angle-double-down hvr-icon-hang"></i>
-					</a>
-				</div>-->
-			</div>
+
             <!--<div class="videoCenter">
                 <video id="wayOutSplash" poster="images/landingPoster.jpg" class="embed-responsive-item" preload>
                     <source src="images/WayOutRin	g_Poster.mp4" type="video/mp4"/>
@@ -97,7 +115,7 @@
                 </div>
             </div>-->
 		</section>
-	   	<section id="music" class="music">
+	   	<section id="music" class="introHide music">
 			<div class="container">
 				<div class="row musicBox">
 					<div class="playAnim col-xs-8 col-sm-8 col-md-8 col-lg-8">
@@ -362,7 +380,7 @@
 			</div>
 		</section>
 
-		<section id="band" class="band">
+		<section id="band" class="introHide band">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -373,8 +391,8 @@
 		</section>
 
 
-		<div class="footerTopMouseCatch"></div>
-        <footer class="footer">
+		<div class="introHide footerTopMouseCatch"></div>
+        <footer class="introHide footer">
 			<div class="transport">
 				<span class="fa-stack fa-square fa-2x amplitude-prev">
 				  <i class="fa fa-square fa-stack-2x"></i>
@@ -420,9 +438,11 @@
 	    <script src="js/amplitude.js"></script>
 	    <script src="js/michaelbromley.js"></script>
 	    <script src="js/amplitude-config.js"></script>
+		<script src="js/landing.js"></script>
 		<script src="js/main.js"></script>
 	    <script src="js/scrollingNavbar.js"></script>
 		<script src="js/slimscroll.js"></script>
+		<script src="js/transit.js"></script>
 
 	  <!-- <script>
 		   $( "*", document.body ).click(function( event ) {
